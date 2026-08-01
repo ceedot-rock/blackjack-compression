@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blackjack compression demo — SlidPhiLabs</title>
+  <meta name="description" content="Browser demo of blackjack-compression: integer series and text round-trip." />
+  <style>
+    :root { font-family: ui-sans-serif, system-ui, sans-serif; color: #e7e5e4; background: #0c0a09; }
+    body { max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    h1 { font-size: 1.35rem; font-weight: 650; }
+    a { color: #fbbf24; }
+    textarea, select, button, input { width: 100%; box-sizing: border-box; margin: 0.35rem 0 0.75rem; padding: 0.55rem 0.65rem; border-radius: 8px; border: 1px solid #44403c; background: #1c1917; color: inherit; }
+    button { cursor: pointer; background: #fbbf24; color: #1c1917; font-weight: 600; border: none; }
+    button:hover { filter: brightness(1.05); }
+    .card { background: #1c1917; border: 1px solid #292524; border-radius: 12px; padding: 1rem 1.1rem; margin: 1rem 0; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+    pre { white-space: pre-wrap; word-break: break-all; font-size: 0.85rem; background: #0c0a09; padding: 0.75rem; border-radius: 8px; }
+    .muted { color: #a8a29e; font-size: 0.9rem; }
+    .ok { color: #4ade80; }
+    .bad { color: #f87171; }
+  </style>
+</head>
+<body>
+  <h1>Blackjack compression <span class="muted">v4 demo</span></h1>
+  <p class="muted">
+    Pure JS · full round-trip ·
+    <a href="https://www.npmjs.com/package/blackjack-compression">npm</a> ·
+    <a href="https://slidphilabs.vercel.app">SlidPhiLabs</a> ·
+    <a href="https://buy.stripe.com/eVq9AUd7D0OY0CVdAQ6wE0a">Donate $29.99</a>
+  </p>
+
+  <div class="card">
+    <label for="mode">Mode</label>
+    <select id="mode">
+      <option value="ints">Integer list (comma / space separated)</option>
+      <option value="text">Text → compressFileV3 (LZ77 + BJ)</option>
+      <option value="bytes">Text → compressBytes (delta path)</option>
+    </select>
+    <label for="input">Input</label>
+    <textarea id="input" rows="6">100 100 101 102 103 102 101 100 100 99</textarea>
+    <button id="run" type="button">Compress + verify RT</button>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div><strong>Original size</strong><pre id="orig">—</pre></div>
+      <div><strong>Packed size</strong><pre id="packed">—</pre></div>
+    </div>
+    <strong>Ratio</strong><pre id="ratio">—</pre>
+    <strong>Round-trip</strong><pre id="rt">—</pre>
+    <strong>Preview (first values / bytes)</strong><pre id="preview">—</pre>
+  </div>
+
+  <p class="muted">Loads <code>blackjack-compression</code> from jsDelivr ESM. Needs network once.</p>
+
+  <script type="module">
+    const $ = (id) => document.getElementById(id);
+    let api = null;
+    try {
+      api = await import("https://cdn.jsdelivr.net/npm/blackjack-compression@1.3.4/+esm");
+    } catch (e) {
+      $("rt").innerHTML = '<span class="bad">Failed to load module: ' + e + "</span>";
+    }
+
+    $("run").onclick = () => {
+      if (!api) return;
+      const mode = $("mode").value;
+      const rawText = $("input").value;
+      try {
+        let origN, packed, backOk, preview;
+        if (mode === "ints") {
+          const values = rawText
+            .trim()
+            .split(/[\s,]+/)
+            .filter(Boolean)
+            .map((x) => Number(x));
+          if (!values.length || values.some((v) => !Number.isFinite(v))) {
+            throw new Error("Parse ints failed");
+          }
+          const wire = api.compress(values);
+          const back = api.decompress(wire);
+          origN = values.length * 8; // rough
+          packed = wire.length;
+          backOk =
+            back.length === values.length &&
+            back.every((v, i) => v === values[i]);
+          preview = JSON.stringify(back.slice(0, 24));
+          $("orig").textContent = values.length + " ints (~" + origN + " B if f64)";
+          $("packed").textContent = packed + " bytes";
+          $("ratio").textContent =
+            (packed / Math.max(1, origN)).toFixed(3) + " vs f64 estimate";
+        } else {
+          const bytes = new TextEncoder().encode(rawText);
+          const wire =
+            mode === "text" ? api.compressFileV3(bytes) : api.compressBytes(bytes);
+          const back =
+            mode === "text"
+              ? api.decompressFileV3(wire)
+              : api.decompressBytes(wire);
+          origN = bytes.length;
+          packed = wire.length;
+          backOk =
+            back.length === bytes.length &&
+            back.every((b, i) => b === bytes[i]);
+          preview = new TextDecoder().decode(back.slice(0, 120));
+          $("orig").textContent = origN + " bytes";
+          $("packed").textContent = packed + " bytes";
+          $("ratio").textContent = (packed / Math.max(1, origN)).toFixed(3);
+        }
+        $("rt").innerHTML = backOk
+          ? '<span class="ok">OK — lossless</span>'
+          : '<span class="bad">FAIL</span>';
+        $("preview").textContent = preview;
+      } catch (e) {
+        $("rt").innerHTML = '<span class="bad">' + e + "</span>";
+      }
+    };
+  </script>
+</body>
+</html>
