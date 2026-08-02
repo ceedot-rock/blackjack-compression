@@ -1,7 +1,7 @@
 # blackjack-compression
 
 [![npm](https://img.shields.io/npm/v/blackjack-compression)](https://www.npmjs.com/package/blackjack-compression)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](./LICENSE)
 [![Node](https://img.shields.io/node/v/blackjack-compression)](https://nodejs.org)
 [![site](https://img.shields.io/badge/site-slidphilabs.vercel.app-blue)](https://slidphilabs.vercel.app)
 
@@ -11,10 +11,10 @@ Fib ops (repeat / ±1 / Δ²) + **Rice** + **Elias ω** + **Combinadic** set cod
 
 | | |
 |--|--|
-| **npm** | [`blackjack-compression@1.3.5`](https://www.npmjs.com/package/blackjack-compression) |
+| **npm** | [`blackjack-compression@1.3.6`](https://www.npmjs.com/package/blackjack-compression) |
 | **demo** | [GitHub Pages](https://ceedot-rock.github.io/blackjack-compression/) |
 | **site** | [slidphilabs.vercel.app](https://slidphilabs.vercel.app) |
-| **license** | [MIT](./LICENSE) |
+| **license** | [Proprietary](./LICENSE) |
 
 ---
 
@@ -129,11 +129,11 @@ npm test
 
 ---
 
-## Donate to SlidPhiLabs
+## Licensing & support
 
-MIT open source. If this helps your stack:
+**Proprietary** — evaluation / non-commercial testing allowed; commercial use requires a license. See [LICENSE](./LICENSE).
 
-**→ [Donate $29.99](https://buy.stripe.com/eVq9AUd7D0OY0CVdAQ6wE0a)** · [Support $199](https://buy.stripe.com/7sYbJ27NjfJSbhz8gw6wE09) · [Consulting $250](https://buy.stripe.com/eVqfZi0kR41a4TbgN26wE02)
+**→ [Donate $29.99](https://buy.stripe.com/eVq9AUd7D0OY0CVdAQ6wE0a)** · [Support $199](https://buy.stripe.com/7sYbJ27NjfJSbhz8gw6wE09) · [Consulting $250](https://buy.stripe.com/eVqfZi0kR41a4TbgN26wE02) · [Try Gate](https://slidphilabs.vercel.app/try)
 
 ---
 
@@ -153,4 +153,4 @@ Brand home: **[slidphilabs.vercel.app](https://slidphilabs.vercel.app)**
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+Proprietary — see [LICENSE](./LICENSE). Prior MIT-published versions remain under MIT as originally released.
