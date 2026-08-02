@@ -1,7 +1,7 @@
 {
   "name": "blackjack-compression",
   "version": "1.3.5",
-  "description": "Blackjack v4 — pure JS integer & byte compression. Fib ops, Rice, Elias ω, Δ², Combinadic sets + LZ77 file path. Full encode/decode round-trip. Strong on runs, walks and smooth deltas.",
+  "description": "Blackjack v4 — pure JS integer & byte compression. Fib ops, Rice, Elias ω, Δ², Combinadic sets + LZ77 file path. Full encode/decode round-trip. Beats generic compressors on runs, walks and smooth deltas.",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -35,10 +35,7 @@
     "run-length",
     "codec",
     "nodejs",
-    "browser",
-    "combinadic",
-    "slidphilabs",
-    "round-trip"
+    "browser"
   ],
   "author": "SlidPhiLabs",
   "license": "MIT",
