@@ -5,14 +5,14 @@
 [![Node](https://img.shields.io/node/v/blackjack-compression)](https://nodejs.org)
 [![site](https://img.shields.io/badge/site-slidphilabs.vercel.app-blue)](https://slidphilabs.vercel.app)
 
-**Blackjack v4** — pure JS integer & byte compression with full **encode/decode round-trip**.
+**Blackjack v4 — pure-JavaScript integer & byte compression with full encode/decode round-trip.**
 
-Fib ops (repeat / ±1 / Δ²) + **Rice** + **Elias ω** + **Combinadic** set coding + **LZ77 file** path.
+A general-purpose lossless compressor built for runs, ±1 walks, smooth second differences, and sorted ID sets. Uses Fibonacci ops, Rice coding, Elias ω, Combinadic set coding, and an LZ77 file path — all in pure JS (Node or browser).
 
 | | |
 |--|--|
 | **npm** | [`blackjack-compression`](https://www.npmjs.com/package/blackjack-compression) |
-| **version** | **1.3.4** |
+| **version** | **1.3.5** |
 | **site** | [slidphilabs.vercel.app](https://slidphilabs.vercel.app) |
 | **license** | [MIT](./LICENSE) |
 
@@ -146,7 +146,9 @@ node -e "import('blackjack-compression').then(m => process.exit(m.selfTest() ? 0
 | Sorted ID sets (`compressSet`) | Need gzip/zstd interoperability |
 | Pure JS (browser or Node) | Huge cold archives (use zstd) |
 
-Sister packages: [`slid-phi`](https://www.npmjs.com/package/slid-phi) (int pathway codec), [`shard-zip`](https://www.npmjs.com/package/shard-zip), [`shard-tsdb`](https://www.npmjs.com/package/shard-tsdb).
+Sister packages: [`slid-phi`](https://www.npmjs.com/package/slid-phi) (int pathway codec), [`shard-zip`](https://www.npmjs.com/package/shard-zip), [`shard-tsdb`](https://www.npmjs.com/package/shard-tsdb), [`zero-range-wave-compression`](https://www.npmjs.com/package/zero-range-wave-compression) (beats gzip/brotli on zeros/ramps/walks).
+
+Site: [slidphilabs.vercel.app](https://slidphilabs.vercel.app)
 
 ---
 
@@ -179,7 +181,7 @@ Always verify with `decompress*` — RT is the contract; ratio is data-dependent
 
 ## Version
 
-- **1.3.x** — Blackjack v4 + full RT (`compress`/`decompress`, bytes, file V3, sets)
+- **1.3.5** — Blackjack v4 + full RT (`compress`/`decompress`, bytes, file V3, sets) + SEO metadata
 - Homepage: https://slidphilabs.vercel.app
 
 ---
