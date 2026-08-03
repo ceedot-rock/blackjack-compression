@@ -9,4 +9,4 @@
 
 `npm i blackjack-compression` on the public registry only installs this stub (API throws with instructions).
 
-© SlidPhiLabs · All rights reserved
+© Slid Phi Labs · All rights reserved

@@ -1,16 +1,33 @@
 {
   "name": "blackjack-compression",
-  "version": "1.4.0",
-  "description": "STUB — proprietary SlidPhiLabs codec. Real package delivered after purchase or Try Gate. https://slidphilabs.vercel.app/access",
+  "version": "1.4.1",
+  "description": "Slid Phi Labs \u2014 Blackjack v4 pure JS integer & byte compression. Fib ops, Rice, Elias \u03c9, \u0394\u00b2, Combinadic sets + LZ77. Full encode/decode round-trip.",
   "type": "module",
   "main": "index.js",
-  "exports": { ".": "./index.js" },
-  "files": ["index.js", "README.md", "LICENSE"],
-  "scripts": { "test": "node -e \"import('./index.js').then(() => console.log('stub ok'))\"" },
-  "keywords": ["slidphilabs", "proprietary", "stub"],
-  "author": "SlidPhiLabs",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node -e \"import('./index.js').then(() => console.log('stub ok'))\""
+  },
+  "keywords": [
+    "slid phi labs",
+    "proprietary",
+    "stub"
+  ],
+  "author": "Slid Phi Labs",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://slidphilabs.vercel.app/access",
-  "repository": { "type": "git", "url": "git+https://github.com/ceedot-rock/blackjack-compression.git" },
-  "bugs": { "url": "https://github.com/ceedot-rock/blackjack-compression/issues" }
+  "homepage": "https://slidphilabs.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceedot-rock/blackjack-compression.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ceedot-rock/blackjack-compression/issues"
+  }
 }
