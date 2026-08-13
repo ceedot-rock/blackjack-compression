@@ -43,4 +43,4 @@ Sister package **slid-phi** attacks a different cut: *known pathways* (universe 
 - Donate $29.99: https://buy.stripe.com/eVq9AUd7D0OY0CVdAQ6wE0a  
 - Support + Integration $199: https://buy.stripe.com/7sYbJ27NjfJSbhz8gw6wE09  
 
-Site: https://www.slidphilabs.com  
+Site: https://slidphilabs.vercel.app  

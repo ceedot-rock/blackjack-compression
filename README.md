@@ -1,40 +1,34 @@
-# blackjack-compression (public stub)
+# blackjack-compression
 
+**Apache-2.0** · pure JavaScript integer & byte compression (Blackjack v4).
 
-<p align="center">
-  <img src="./brand/slid-phi-labs-master.jpg" alt="Zero Range Wave · Slid Phi Labs" width="720"/>
-</p>
+Fib ops · Rice · Elias ω · Δ² · Combinadic sets · LZ77 file path. Full encode/decode round-trip.
 
-<p align="center"><strong>Slid Phi Labs</strong> — official product branding</p>
+## Install
 
-<p align="center"><img src="https://raw.githubusercontent.com/ceedot-rock/splabs-brand/main/assets/brand/logos/logo-blackjack.jpg" alt="product logo" width="280"/></p>
-
-
-**Proprietary.** Public npm does **not** include codec source.
-
-## Get the real package
-
-1. Buy a license or complete [Try Gate](https://www.slidphilabs.com/try)
-2. Follow [Access](https://www.slidphilabs.com/access) — you receive a private install/download
-
-`npm i blackjack-compression` on the public registry only installs this stub (API throws with instructions).
-
-© Slid Phi Labs · All rights reserved
-
-## Agentic commerce
-
-Agents can buy / quote lab products via **x402** (USDC on Solana mainnet or Base mainnet).
-
-```
-Agent commerce: GET https://www.slidphilabs.com/api/agent then pay via x402 on Solana or Base mainnet (X-PAYMENT) on catalog POST.
+```bash
+npm install blackjack-compression
 ```
 
-| Surface | URL |
-|---------|-----|
-| Discovery | https://www.slidphilabs.com/api/agent |
-| Catalog | https://www.slidphilabs.com/api/x402-products |
-| agents.txt | https://www.slidphilabs.com/agents.txt |
-| agents.json | https://www.slidphilabs.com/agents.json |
-| llms.txt | https://www.slidphilabs.com/llms.txt |
+## Quick start
 
-Humans: [www.slidphilabs.com](https://www.slidphilabs.com) (Stripe).
+```js
+import { compress, decompress, selfTest } from "blackjack-compression";
+
+const ints = [0, 1, 2, 3, 4, 3, 2, 1];
+const packed = compress(ints);
+const back = decompress(packed);
+console.log(back, selfTest());
+```
+
+## License & credit
+
+Licensed under the **Apache License, Version 2.0**. You may use this commercially; keep copyright and `NOTICE` attribution.
+
+© 2026 Slid Phi Labs / Corey Tasz
+
+## Support / funding
+
+This library is free. Paid support, custom integration, and the separate commercial product line live at [slidphilabs.com](https://www.slidphilabs.com). Sponsors: see `funding` in `package.json`.
+
+> **Scope:** This package is historical open-source Blackjack tooling. It is **not** the current Slid Phi Labs public product stack (SPL Codec / private engines stay separate and proprietary).
