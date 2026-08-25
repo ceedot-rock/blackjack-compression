@@ -42,7 +42,7 @@
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/ceedot-rock/blackjack-compression",
+  "homepage": "https://www.slidphilabs.com/npm#blackjack",
   "bugs": {
     "url": "https://github.com/ceedot-rock/blackjack-compression/issues"
   },
@@ -58,6 +58,24 @@
     {
       "type": "individual",
       "url": "https://www.slidphilabs.com"
+    },
+    {
+      "type": "individual",
+      "url": "https://buy.stripe.com/00w00k6Jf8hqgBTaoE6wE0h"
+    },
+    {
+      "type": "individual",
+      "url": "https://www.slidphilabs.com/pay?sku=blackjack"
     }
-  ]
+  ],
+  "agentic": {
+    "name": "Slid Phi Labs",
+    "sku": "blackjack",
+    "human": "https://buy.stripe.com/00w00k6Jf8hqgBTaoE6wE0h",
+    "pay": "https://www.slidphilabs.com/pay?sku=blackjack",
+    "x402": "https://www.slidphilabs.com/api/x402-products?sku=blackjack",
+    "pricing": "https://www.slidphilabs.com/pricing.json",
+    "usd": 199,
+    "note": "Support for the public OSS library. Not a secret engine. Not Chamber Year."
+  }
 }
