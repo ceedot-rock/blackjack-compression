@@ -1,7 +1,7 @@
 {
   "name": "blackjack-compression",
-  "version": "1.5.0",
-  "description": "Blackjack v4 \u2014 pure-JS integer & byte compression (Fib, Rice, Elias \u03c9, \u0394\u00b2, Combinadic, LZ77). Full encode/decode round-trip. Open source.",
+  "version": "1.5.1",
+  "description": "Blackjack v4 — pure-JS integer & byte compression (Fib, Rice, Elias ω, Δ², Combinadic, LZ77). Full encode/decode round-trip. Open source.",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -35,10 +35,10 @@
     "delta-compression",
     "codec",
     "open-source",
-    "apache-2.0"
+    "gpl-3.0"
   ],
   "author": "Slid Phi Labs / Corey Tasz",
-  "license": "Apache-2.0",
+  "license": "GPL-3.0-only",
   "engines": {
     "node": ">=18"
   },

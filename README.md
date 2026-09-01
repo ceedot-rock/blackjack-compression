@@ -1,6 +1,6 @@
 # blackjack-compression
 
-**Apache-2.0** · pure JavaScript integer & byte compression (Blackjack v4).
+**GNU GPLv3** · pure JavaScript integer & byte compression (Blackjack v4).
 
 Fib ops · Rice · Elias ω · Δ² · Combinadic sets · LZ77 file path. Full encode/decode round-trip.
 
@@ -23,7 +23,7 @@ console.log(back, selfTest());
 
 ## License & credit
 
-Licensed under the **Apache License, Version 2.0**. You may use this commercially; keep copyright and `NOTICE` attribution.
+Licensed under the **GNU General Public License v3**. Keep copyright and `NOTICE` attribution. Closed-source distribution needs a [written exception](COMMERCIAL.md). $199 support is help, not Combined GC.
 
 © 2026 Slid Phi Labs / Corey Tasz
 
