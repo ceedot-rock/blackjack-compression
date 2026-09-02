@@ -1,5 +1,13 @@
 # blackjack-compression
 
+**GNU GPLv3** public library from [Slid Phi Labs](https://www.slidphilabs.com).
+
+This repository is a historical open-source integer/byte compressor. It is **not** the hosted AWARE compressor and **not** Combined GC. The lab product catalog is on [slidphilabs.com/products](https://www.slidphilabs.com/products).
+
+The npm package `blackjack-compression` on the public registry is a **stub** that talks to the hosted API. This git tree is the GPLv3 library.
+
+---
+
 **GNU GPLv3** · pure JavaScript integer & byte compression (Blackjack v4).
 
 Fib ops · Rice · Elias ω · Δ² · Combinadic sets · LZ77 file path. Full encode/decode round-trip.
