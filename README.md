@@ -2,7 +2,7 @@
 
 **GNU GPLv3** public library from [Slid Phi Labs](https://www.slidphilabs.com).
 
-This repository is a historical open-source integer/byte compressor. It is **not** the hosted AWARE compressor and **not** Combined GC. The lab product catalog is on [slidphilabs.com/products](https://www.slidphilabs.com/products).
+This repository is a historical open-source integer/byte compressor. It is **not** the hosted **PCC** compressor. AWARE is a retired alias. The lab product catalog is on [slidphilabs.com/products](https://www.slidphilabs.com/products).
 
 The npm package `blackjack-compression` on the public registry is a **stub** that talks to the hosted API. This git tree is the GPLv3 library.
 
@@ -31,7 +31,7 @@ console.log(back, selfTest());
 
 ## License & credit
 
-Licensed under the **GNU General Public License v3**. Keep copyright and `NOTICE` attribution. Closed-source distribution needs a [written exception](COMMERCIAL.md). $199 support is help, not Combined GC.
+Licensed under the **GNU General Public License v3**. Keep copyright and `NOTICE` attribution. Closed-source distribution needs a [written exception](COMMERCIAL.md). $199 support is help, not a PCC seat.
 
 © 2026 Slid Phi Labs / Corey Tasz
 
@@ -39,4 +39,4 @@ Licensed under the **GNU General Public License v3**. Keep copyright and `NOTICE
 
 This library is free. Paid support, custom integration, and the separate commercial product line live at [slidphilabs.com](https://www.slidphilabs.com). Sponsors: see `funding` in `package.json`.
 
-> **Scope:** This package is historical open-source Blackjack tooling. It is **not** the current Slid Phi Labs public product stack (SPL Codec / private engines stay separate and proprietary).
+> **Scope:** This package is historical open-source Blackjack tooling. It is **not** the current Slid Phi Labs public product stack (PCC / private encoder stay separate).
