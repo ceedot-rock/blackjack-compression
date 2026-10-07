@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/ceedot-rock/blackjack-compression/security/advisories/new
+    about: Report privately. Do not open a public issue.
+  - name: Commercial license
+    url: mailto:corey@slidphilabs.com
+    about: Ship blackjack-compression in a closed product. Terms: see COMMERCIAL.md.

@@ -1,5 +1,8 @@
 # blackjack-compression
 
+[![Audited checks](https://github.com/ceedot-rock/blackjack-compression/actions/workflows/audited-checks.yml/badge.svg)](https://github.com/ceedot-rock/blackjack-compression/actions/workflows/audited-checks.yml)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 **GNU GPLv3** public library from [Slid Phi Labs](https://www.slidphilabs.com).
 
 This repository is a historical open-source integer/byte compressor. It is **not** the hosted **PCC** compressor. AWARE is a retired alias. The lab product catalog is on [slidphilabs.com/products](https://www.slidphilabs.com/products).
