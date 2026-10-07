@@ -1,0 +1,48 @@
+name: Audited checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: npm test (selfTest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run selfTest
+        run: npm test
+
+  examples:
+    name: Examples run clean
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run integer and byte examples
+        run: |
+          node examples/ints.mjs
+          node examples/bytes.mjs
+
+  release-files:
+    name: Release files present and licensed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check package files ship with license + notice
+        run: |
+          for f in LICENSE NOTICE README.md index.js; do
+            test -f "$f" || { echo "MISSING $f"; exit 1; }
+          done
+          grep -q "GNU General Public License" LICENSE || { echo "LICENSE is not GPL-3.0 text"; exit 1; }
+          node -e "const p=require('./package.json'); if(p.license!=='GPL-3.0-only') throw new Error('package.json license field is not GPL-3.0-only'); console.log('declared version:', p.version)"
